@@ -1,7 +1,3 @@
-/**
- * @author v.lugovsky
- * created on 16.12.2015
- */
 (function () {
     'use strict';
 
@@ -25,6 +21,7 @@
                 url: '/nuevo',
                 templateUrl: 'app/pages/store/add/addStore.html',
                 title: 'Nuevo Comercio',
+                controller: 'AddStoreCtrl',
                 sidebarMeta: {
                     order: 0,
                 },
