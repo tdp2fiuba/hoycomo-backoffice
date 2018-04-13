@@ -8,10 +8,14 @@
                         <input type="text" class="form-control" id="addStoreName" placeholder="Nombre">
                     </div>
 
-                    <div class="form-group" style="position: relative;">
-                        <label style="font-weight: bold;font-size: 15px;" for="addStoreAddress">Dirección</label>
-                        <input type="text" class="form-control" id="addStoreAddress" placeholder="Dirección de comercio" style="width: 90%">
-                        <button type="button" class="btn btn-default" style="position: absolute;right: 0px;top: 21px;width: 95px;" ng-click="validateAddress()">Validar</button>
+                    <div class="form-group row" style="position: relative;">
+                        <div class="col-md-10">
+                            <label style="font-weight: bold;font-size: 15px;" for="addStoreAddress">Dirección</label>
+                            <input type="text" class="form-control col-m" id="addStoreAddress" placeholder="Dirección de comercio">
+                        </div>
+                        <div class="col-md-2" style="padding-top: 20px;">
+                            <button type="button" class="btn btn-default" style="width: 100%;" ng-click="validateAddress()">Validar</button>
+                        </div>
                     </div>
 
                     <div style="box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25);padding: 10px;margin-bottom: 15px;">
