@@ -14,7 +14,10 @@
                             <input type="text" class="form-control col-m" id="addStoreAddress" placeholder="Dirección de comercio">
                         </div>
                         <div class="col-md-2" style="padding-top: 20px;">
-                            <button type="button" class="btn btn-default" style="width: 100%;" ng-click="validateAddress()">Validar</button>
+                            <button type="button" class="btn btn-default btn-with-icon" style="width: 100%;" ng-click="validateAddress()" ng-disabled="isValidatingAddress">
+                                <i ng-show="isValidatingAddress" class="fa fa-circle-o-notch fa-spin"></i>
+                                Validar
+                            </button>
                         </div>
                     </div>
 
@@ -27,8 +30,16 @@
                         <input type="text" class="form-control" id="addStoreBusinessName" placeholder="Razón social">
                     </div>
 
+                    <div class="form-group">
+                        <label for="addStoreEmail" class="control-label" style="font-weight: bold;font-size: 15px;">Email</label>
+                        <input type="email" class="form-control" id="addStoreEmail" placeholder="Email">
+                    </div>
+
                     <div class="row" style="text-align: center;">
-                        <button type="button" class="btn btn-primary btn-lg" ng-click="addStore()" style="margin-right: 20px;">Guardar</button>
+                        <button type="button" class="btn btn-primary btn-lg" ng-click="addStore()" style="margin-right: 20px;" ng-disabled="isSendingStoreInfo">
+                            <i ng-show="isSendingStoreInfo" class="fa fa-circle-o-notch fa-spin"></i>
+                            Guardar
+                        </button>
                         <button type="button" class="btn btn-default btn-lg" >Cancelar</button>
                     </div>
                 </form>

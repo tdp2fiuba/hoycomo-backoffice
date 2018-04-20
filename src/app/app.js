@@ -18,22 +18,18 @@ angular.module('BlurAdmin', [
 ])
 
 .factory('Server', function () {
-    var SERVER_URI = "https://hoycomo-server.herokuapp.com";
-    //const SERVER_URI = "http://localhost:8080";
+    //var SERVER_URI = "https://hoycomo-server.herokuapp.com";
+    var SERVER_URI = "http://localhost:8080";
 
     function pushStore(data,callback) {
         var response = {};
 
-        if (!data.name || !data.address || !data.business_name){
+        if (!data.name || !data.address || !data.business_name || !data.email){
             response.success = false;
             response.error = "Debe definir todos los campos";
             return response;
         }
-        $.post(SERVER_URI + "/api/store",{store:{
-            name: data.name,
-            business_name: data.business_name,
-            address: data.address
-        }})
+        $.post(SERVER_URI + "/api/store",data)
         .done(function (dataResponse) {
             response.success = true;
             response.data = dataResponse;
@@ -41,7 +37,7 @@ angular.module('BlurAdmin', [
         })
         .fail(function ( jqXHR, textStatus) {
             response.success = false;
-            response.error = "intente nuevamente más tarde";
+            response.error = jqXHR.responseJSON.error || "intente nuevamente más tarde";
             callback(response);
         })
 
@@ -63,7 +59,7 @@ angular.module('BlurAdmin', [
             })
             .fail(function ( jqXHR, textStatus) {
                 response.success = false;
-                response.error = "intente nuevamente más tarde";
+                response.error = jqXHR.responseJSON.error || "intente nuevamente más tarde";
                 callback(response);
             });
     }
