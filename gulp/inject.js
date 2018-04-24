@@ -3,6 +3,7 @@
 var path = require('path');
 var gulp = require('gulp');
 var conf = require('./conf');
+var babel = require('gulp-babel');
 
 var $ = require('gulp-load-plugins')();
 
@@ -28,6 +29,7 @@ gulp.task('inject', ['scripts', 'styles', 'injectAuth', 'inject404', 'copyVendor
     path.join('!' + conf.paths.src, '/app/**/*.spec.js'),
     path.join('!' + conf.paths.src, '/app/**/*.mock.js'),
   ])
+    .pipe(babel())
     /*.pipe($.angularFilesort())*/.on('error', conf.errorHandler('AngularFilesort'));
 
   var injectOptions = {

@@ -18,7 +18,7 @@ angular.module('BlurAdmin', [
 ])
 
 .factory('Server', function () {
-    var SERVER_URI = "https://hoycomo-server.herokuapp.com";
+    const SERVER_URI = "https://hoycomo-server.herokuapp.com";
     //var SERVER_URI = "http://localhost:8080";
 
     function pushStore(data,callback) {
