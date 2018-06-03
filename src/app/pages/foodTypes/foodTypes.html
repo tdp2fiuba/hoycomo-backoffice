@@ -1,0 +1,64 @@
+<div ba-panel ba-panel-class="menu-page" ng-if="loading" >
+    <div class="panel-content">
+        <p style="text-align: center;padding: 10px 0 0 0; font-size: 30px;">Cargando tipos de comida...</p>
+        
+        <div class="cssload-container">
+            <div class="cssload-arc">
+                <div class="cssload-arc-cube"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="widgets" ng-init="init()">
+    <div class="row" ng-if="!loading">
+      <div class="col-md-12">
+        <div ba-panel ba-panel-title="Tipos de Comida" ba-panel-class="with-scroll">
+            <div class="add-row-editable-table">
+                <button class="btn btn-primary" ng-click="addFoodType()">Nuevo</button>
+              </div>
+              <table class="table table-bordered table-hover table-condensed">
+                <tr>
+                  <td ng-hide="true"></td>
+                  <td>Tipo de Comida</td>
+                  <td>Acciones</td>
+                </tr>
+                <tr ng-repeat="foodType in foodTypes" class="editable-row">
+                  <td ng-hide="true">
+                      {{$index}}
+                  </td>
+                  <td>
+                    <span editable-text="foodType.description" e-name="description" e-form="rowform" e-required onbeforesave="checkName($data, $index)">
+                        {{ foodType.description }}
+                    </span>
+                  </td>
+                  <td>
+                    <form editable-form name="rowform" 
+                          ng-show="rowform.$visible" 
+                          class="form-buttons form-inline"
+                          shown="inserted == foodType" 
+                          onaftersave="submitFoodType(foodType, rowform, $index)">
+                        <button type="submit" 
+                                ng-disabled="rowform.$waiting || foodType.saving" 
+                                class="btn btn-primary editable-table-button btn-xs">
+                            <i ng-show="foodType.saving" class="fa fa-circle-o-notch fa-spin"></i>
+                            Guardar
+                        </button>
+                        <button type="button" ng-disabled="rowform.$waiting" ng-click="cancelNew($index)" class="btn btn-default editable-table-button btn-xs">
+                            Cancelar
+                        </button>
+                    </form>
+                    <div class="buttons" ng-show="!rowform.$visible">
+                        <button class="btn btn-danger editable-table-button btn-xs" 
+                                ng-disabled="foodType.deleting"
+                                ng-click="removeFoodType($index)">
+                            <i ng-show="foodType.deleting" class="fa fa-circle-o-notch fa-spin"></i>
+                            Borrar
+                        </button>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+        </div>
+      </div>
+    </div>
+</div>
