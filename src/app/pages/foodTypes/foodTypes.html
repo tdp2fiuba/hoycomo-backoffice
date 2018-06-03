@@ -32,8 +32,11 @@
                     </span>
                   </td>
                   <td>
-                    <form editable-form name="rowform" ng-show="rowform.$visible" class="form-buttons form-inline"
-                        shown="inserted == foodType" onaftersave="submitFoodType(foodType, rowform, $index)">
+                    <form editable-form name="rowform" 
+                          ng-show="rowform.$visible" 
+                          class="form-buttons form-inline"
+                          shown="inserted == foodType" 
+                          onaftersave="submitFoodType(foodType, rowform, $index)">
                         <button type="submit" 
                                 ng-disabled="rowform.$waiting || foodType.saving" 
                                 class="btn btn-primary editable-table-button btn-xs">
