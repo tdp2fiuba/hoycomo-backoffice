@@ -7,7 +7,7 @@
 
   angular.module('BlurAdmin.pages', [
     'ui.router',
-    
+    'BlurAdmin.pages.foodTypes',
     'BlurAdmin.pages.store',
   ])
       .config(routeConfig);
