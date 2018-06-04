@@ -9,7 +9,7 @@
         $stateProvider
             .state('foodTypes', {
                 url: '/foodTypes',
-                templateUrl : '/app/pages/foodTypes/foodTypes.html',
+                templateUrl : 'app/pages/foodTypes/foodTypes.html',
                 title: 'Tipos de Comida',
                 controller: 'FoodTypesCtrl',
                 sidebarMeta: {
