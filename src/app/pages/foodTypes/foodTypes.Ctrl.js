@@ -32,11 +32,11 @@
             .catch(function (err) {
                 $scope.loading = false;
             });
-        }
+        };
 
         $scope.removeFoodType = function(index) {
             var foodType = $scope.foodTypes[index];
-            const modalInstance = $uibModal.open({
+            var modalInstance = $uibModal.open({
                 templateUrl: '/app/pages/foodTypes/foodTypes.modal.html',
                 controller: 'FoodTypesModalCtrl',
                 controllerAs: 'ctrl'
@@ -72,7 +72,7 @@
             if ($scope.foodTypes.find(function (type, typeIndex) { return type.description.toLowerCase() === name.toLowerCase() && typeIndex !== index })) {
                 return "Ya existe un tipo con ese nombre";
             } 
-        }
+        };
 
         $scope.submitFoodType = function(foodType, rowform, index) {
             foodType.saving = true;
@@ -92,7 +92,7 @@
                 });
             });
             
-        }
+        };
 
         $scope.cancelNew = function (index) {
             $scope.foodTypes.splice(index, 1);
