@@ -37,7 +37,7 @@
         $scope.removeFoodType = function(index) {
             var foodType = $scope.foodTypes[index];
             var modalInstance = $uibModal.open({
-                templateUrl: '/app/pages/foodTypes/foodTypes.modal.html',
+                templateUrl: 'app/pages/foodTypes/foodTypes.modal.html',
                 controller: 'FoodTypesModalCtrl',
                 controllerAs: 'ctrl'
             });
