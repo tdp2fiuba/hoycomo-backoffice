@@ -2,8 +2,7 @@
     'use strict';
 
     angular.module('BlurAdmin.pages.foodTypes').provider('FoodTypesService', function () {
-        var SERVER_URL = "http://localhost:8080/api/foodTypes/";
-        // var SERVER_URL = "https://hoycomo-server.herokuapp.com/api/foodTypes/";
+        var SERVER_URL = "https://hoycomo-server.herokuapp.com/api/foodTypes/";
         this.$get = function ($http) {
             
             const getFoodTypes = function () {
