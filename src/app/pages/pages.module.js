@@ -9,6 +9,7 @@
     'ui.router',
     'BlurAdmin.pages.foodTypes',
     'BlurAdmin.pages.store',
+    'BlurAdmin.pages.reports',
   ])
       .config(routeConfig);
 

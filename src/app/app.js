@@ -64,8 +64,35 @@ angular.module('BlurAdmin', [
             });
     }
 
+    function getBilling(start,end,callback) {
+        var response = {};
+
+        if (!start || !end){
+            response.success = false;
+            response.error = "Debe ingresar una fecha de inicio";
+            return response;
+        }
+        if (!end){
+            response.success = false;
+            response.error = "Debe ingresar una fecha de fín";
+            return response;
+        }
+        $.get(SERVER_URI + "/api/stats/billing",{start_date:start,end_date:end})
+            .done(function (dataResponse) {
+                response.success = true;
+                response.billings = dataResponse;
+                callback(response);
+            })
+            .fail(function ( jqXHR, textStatus) {
+                response.success = false;
+                response.error = jqXHR.responseJSON.message || "intente nuevamente más tarde";
+                callback(response);
+            });
+    }
+
     return {
-        pushStore : pushStore,
-        getAddressData: getAddressData
+        pushStore       : pushStore,
+        getAddressData  : getAddressData,
+        getBilling      : getBilling
     }
 });
