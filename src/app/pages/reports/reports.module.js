@@ -25,6 +25,15 @@
                 sidebarMeta: {
                     order: 0,
                 },
+            })
+            .state('reports.fee', {
+                url: '/fee',
+                templateUrl: 'app/pages/reports/fee/fee.html',
+                title: 'Fee',
+                controller: 'feeController',
+                sidebarMeta: {
+                    order: 0,
+                },
             });
     }
 })();
