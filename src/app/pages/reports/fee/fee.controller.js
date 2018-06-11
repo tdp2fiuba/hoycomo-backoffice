@@ -42,14 +42,14 @@
             $scope.loading = true;
             var start = $scope.date.start.toString();
             var end = $scope.date.end.toString();
-            Server.getBilling(start,end,function (res) {
+            Server.getFee(start,end,function (res) {
                 if (!res.success){
                     toastr.error(res.error, 'Error al cargar los fee');
                     $scope.loading = false;
                     return;
                 }
 
-                $scope.fee = res.billings;
+                $scope.fee = res.fee;
 
                 $scope.loading = false;
             });

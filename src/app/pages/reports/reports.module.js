@@ -29,7 +29,7 @@
             .state('reports.fee', {
                 url: '/fee',
                 templateUrl: 'app/pages/reports/fee/fee.html',
-                title: 'Fee',
+                title: 'Tarifas',
                 controller: 'feeController',
                 sidebarMeta: {
                     order: 0,

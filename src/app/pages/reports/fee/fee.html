@@ -52,7 +52,7 @@
                         <tbody>
                         <tr ng-repeat="f in fee" class="editable-row">
                             <td style="text-align: left;font-size: 18px;">{{f.store}}</td>
-                            <td class="align-right" style="font-size: 18px;">$ {{f.billing * 0.01}}</td>
+                            <td class="align-right" style="font-size: 18px;">$ {{f.fee.toFixed(2)}}</td>
                         </tr>
                     </table>
                 </div>

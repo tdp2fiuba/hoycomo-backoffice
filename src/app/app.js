@@ -90,9 +90,36 @@ angular.module('BlurAdmin', [
             });
     }
 
+    function getFee(start,end,callback) {
+        var response = {};
+
+        if (!start || !end){
+            response.success = false;
+            response.error = "Debe ingresar una fecha de inicio";
+            return response;
+        }
+        if (!end){
+            response.success = false;
+            response.error = "Debe ingresar una fecha de fín";
+            return response;
+        }
+        $.get(SERVER_URI + "/api/stats/fee",{start_date:start,end_date:end})
+            .done(function (dataResponse) {
+                response.success = true;
+                response.fee = dataResponse;
+                callback(response);
+            })
+            .fail(function ( jqXHR, textStatus) {
+                response.success = false;
+                response.error = jqXHR.responseJSON.message || "intente nuevamente más tarde";
+                callback(response);
+            });
+    }
+
     return {
         pushStore       : pushStore,
         getAddressData  : getAddressData,
-        getBilling      : getBilling
+        getBilling      : getBilling,
+        getFee          : getFee
     }
 });
