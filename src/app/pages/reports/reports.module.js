@@ -27,9 +27,9 @@
                 },
             })
             .state('reports.fee', {
-                url: '/fee',
+                url: '/comisiones',
                 templateUrl: 'app/pages/reports/fee/fee.html',
-                title: 'Tarifas',
+                title: 'Comisiones',
                 controller: 'feeController',
                 sidebarMeta: {
                     order: 0,

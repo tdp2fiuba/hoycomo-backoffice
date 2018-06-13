@@ -7,7 +7,7 @@
     /** @ngInject */
     function feeController($scope, $window, toastr, toastrConfig, Server, $filter, $uibModal) {
         $scope.loading = true;
-        $scope.emptyMessage = "No hay fee disponible";
+        $scope.emptyMessage = "No hay comisiones disponible";
         $scope.fee = [];
 
         $scope.date = {
@@ -44,7 +44,7 @@
             var end = $scope.date.end.toString();
             Server.getFee(start,end,function (res) {
                 if (!res.success){
-                    toastr.error(res.error, 'Error al cargar los fee');
+                    toastr.error(res.error, 'Error al cargar las comisiones');
                     $scope.loading = false;
                     return;
                 }
