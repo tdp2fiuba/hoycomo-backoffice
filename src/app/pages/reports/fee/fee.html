@@ -6,7 +6,8 @@
                     <td align="center">
                         <h4>Desde</h4>
                         <div class="uib-datepicker-wrap" style="min-height: 245px;">
-                            <uib-datepicker ng-model="date.start" datepicker-options="datepickerOption"></uib-datepicker>
+                            <uib-datepicker ng-model="date.start" datepicker-options="{showWeeks: false,
+                            datepickerMode: 'month',maxDate: date.end}"></uib-datepicker>
                         </div>
                         <label>Fecha seleccionada: <em>{{date.start | date:'fullDate' }}</em></label>
                     </td>
@@ -14,9 +15,10 @@
                         <div class="col-xlg-6 col-md-12 col-sm-6">
                             <h4>Hasta</h4>
                             <div class="uib-datepicker-wrap" style="min-height: 245px;">
-                                <uib-datepicker ng-model="date.end" datepicker-options="datepickerOption"></uib-datepicker>
+                                <uib-datepicker ng-model="date.end" datepicker-options="{showWeeks: false,
+                                datepickerMode: 'month',minDate: date.start}"></uib-datepicker>
                             </div>
-                            <label>Fecha seleccionada: <em>{{date.end | date:'fullDate' }}</em></label>
+                                    <label>Fecha seleccionada: <em>{{date.end | date:'fullDate' }}</em></label>
                         </div>
                     </td>
                 </tr>

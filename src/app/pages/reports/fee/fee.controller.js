@@ -15,11 +15,20 @@
             end: new Date()
         };
 
-        $scope.datepickerOption = {
+        /*
+        $scope.datepickerStartOption = {
+            showWeeks: false,
+            datepickerMode: 'month',
+            maxDate: $scope.date.end
+        };
+
+        $scope.datepickerEndOption = {
             showWeeks: false,
             datepickerMode: 'month',
             //minMode: 'month'
+            minDate: $scope.date.start
         };
+        */
 
         $scope.toastOptions = {
             autoDismiss: false,

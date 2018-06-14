@@ -15,14 +15,6 @@
             end: new Date()
         };
 
-        //$scope.dateStart = new Date(2018, 2, 1, 0, 0);
-        //$scope.dateEnd = new Date();
-        $scope.datepickerOption = {
-            showWeeks: false,
-            datepickerMode: 'month',
-            //minMode: 'month'
-        };
-
         $scope.toastOptions = {
             autoDismiss: false,
             positionClass: 'toast-top-right',
