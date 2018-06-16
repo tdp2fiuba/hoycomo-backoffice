@@ -1,3 +1,68 @@
-<div ba-panel ba-panel-class="with-scroll">
-
+<div ba-panel ba-panel-class="with-scroll" ng-if="loading">
+    <div class="panel-content">
+        <p style="text-align: center;padding: 10px 0 0 0; font-size: 30px;">Cargando comercios...</p>
+        
+        <div class="cssload-container">
+            <div class="cssload-arc">
+                <div class="cssload-arc-cube"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="widgets" ng-init="init()">
+    <div class="row" ng-if="!loading">
+      <div class="col-md-12">
+        <div ba-panel ba-panel-title="Comercios" ba-panel-class="with-scroll">
+            <table class="table table-bordered table-hover table-condensed">
+                <tr style="font-weight: bold">
+                    <td ng-hide="true"></td>
+                    <td>Nombre</td>
+                    <td>Razón Social</td>
+                    <td>Fecha de Alta</td>
+                    <td>Dirección</td>
+                    <td>Email</td>
+                    <td></td>
+                </tr>
+                <tr ng-repeat="store in stores" class="editable-row">
+                    <td ng-hide="true">
+                        {{$index}}
+                    </td>
+                    <td>
+                        {{ store.name }}
+                    </td>
+                    <td>
+                        {{ store.business_name }}
+                    </td>
+                    <td>
+                        {{ store.register_timestamp | date:'dd-MM-yyyy' }}
+                    </td>
+                    <td>
+                        {{ store.address.name }}
+                    </td>
+                    <td>
+                        {{ store.email }}
+                    </td>
+                    <td>
+                        <div class="buttons" ng-show="!rowform.$visible">
+                            <button class="btn btn-danger btn-xs" 
+                                    ng-disabled="store.updating"
+                                    ng-click="disableStore($index)"
+                                    ng-if="!store.disabled">
+                                <i ng-show="store.updating" class="fa fa-circle-o-notch fa-spin"></i>
+                                Deshabilitar
+                            </button>
+                            <button class="btn btn-warning btn-xs" 
+                                    ng-disabled="store.updating"
+                                    ng-click="enableStore($index)"
+                                    ng-if="store.disabled">
+                                <i ng-show="store.updating" class="fa fa-circle-o-notch fa-spin"></i>
+                                Habilitar
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+      </div>
+    </div>
 </div>
