@@ -180,3 +180,16 @@
     margin-top: 0px;
     margin-bottom: 0px;
 }
+
+.error-textarea {
+    border-width: 1px;
+    border-color:  rgb(221,44,0);
+}
+
+.error-message {
+    color: rgb(221,44,0) !important;
+    font-family: Roboto,Helvetica Neue,sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    padding-top: 5px;
+}
