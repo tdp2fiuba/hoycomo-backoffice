@@ -10,7 +10,7 @@
                     return Promise.resolve({ success: false, error: "Debe ingresar ambas fechas" });
                 }
 
-                const url = 'http://localhost:8080/api/stats/lead_time_per_client';
+                const url = 'https://hoycomo-server.herokuapp.com/api/stats/lead_time_per_client';
                 return $http({
                     method: 'GET',
                     url: url,
