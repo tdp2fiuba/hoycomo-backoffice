@@ -2,9 +2,10 @@
     'use strict';
 
     angular.module('BlurAdmin.pages.store').provider('StoresService', function () {
-        var STORES_GET_URL = "http://localhost:8080/api/stores/";
-        var STORE_PATCH_URL = "http://localhost:8080/api/store/";
-        //var SERVER_URL = "https://hoycomo-server.herokuapp.com/api/stores/";
+        // var STORE_PATCH_URL = "http://localhost:8080/api/store/";
+        // var STORES_GET_URL = "http://localhost:8080/api/stores/";
+        var STORE_PATCH_URL = "https://hoycomo-server.herokuapp.com/api/store/";
+        var STORES_GET_URL = "https://hoycomo-server.herokuapp.com/api/stores/";
         
         this.$get = function ($http) {
             var getStores = function () {
