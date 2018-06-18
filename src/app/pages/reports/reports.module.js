@@ -34,6 +34,15 @@
                 sidebarMeta: {
                     order: 0,
                 },
+            })
+            .state('reports.leadTime', {
+                url: '/leadTime',
+                templateUrl: 'app/pages/reports/leadTime/leadTime.html',
+                title: 'Tiempo de Espera',
+                controller: 'leadTimeReportController',
+                sidebarMeta: {
+                    order: 0,
+                },
             });
     }
 })();
