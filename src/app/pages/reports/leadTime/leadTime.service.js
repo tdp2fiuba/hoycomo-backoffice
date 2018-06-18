@@ -14,7 +14,7 @@
                 $.get(url,{ start_date: start, end_date: end})
                     .done(function (dataResponse) {
                         response.success = true;
-                        response.fee = dataResponse;
+                        response.leadTimes = dataResponse;
                         cb(response);
                     })
                     .fail(function ( jqXHR, textStatus) {
