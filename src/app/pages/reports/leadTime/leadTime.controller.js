@@ -16,8 +16,8 @@
             { client: 'McDonald\'s', leadTime: 20}
         ];
 
-        const end = new Date;
-        const start = new Date(end.getFullYear(),end.getMonth() - 1, end.getDate());
+        var end = new Date;
+        var start = new Date(end.getFullYear(),end.getMonth() - 1, end.getDate());
         $scope.date = {
             start: start,
             end: end
@@ -41,10 +41,9 @@
 
         function getLeadTimes() {
             $scope.loading = true;
-            const start = $scope.date.start.toString();
-            const end = $scope.date.end.toString();
-            OrderReportsService.getLeadTimePerClient(start,end)
-            .then(res => {
+            var start = $scope.date.start.toString();
+            var end = $scope.date.end.toString();
+            OrderReportsService.getLeadTimePerClient(start,end,function (res) {
                 if (!res.success){
                     toastr.error(res.error, 'Error al cargar los pedidos');
                     $scope.loading = false;
